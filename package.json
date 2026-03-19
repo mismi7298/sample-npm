@@ -1,18 +1,30 @@
 {
-  "name": "sample-debug-chalk",
+  "name": "sample-node-cli",
   "version": "1.0.0",
-  "description": "Sample project using debug and chalk",
+  "description": "Sample Node.js 24.x CLI with ~10 total dependencies",
   "type": "module",
   "main": "index.js",
+  "bin": {
+    "task-cli": "index.js"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "scripts": {
     "start": "node index.js",
-    "debug": "DEBUG=* node index.js"
+    "dev": "node --watch index.js"
   },
-  "keywords": [],
+  "keywords": ["sample", "node24", "cli"],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "chalk": "5.1.1",
-    "debug": "4.4.1"
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "dayjs": "^1.11.13",
+    "debug": "^4.4.1",
+    "dotenv": "^16.4.7",
+    "lodash-es": "^4.17.21",
+    "nanoid": "^5.1.5",
+    "zod": "^3.24.2"
   }
 }
