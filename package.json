@@ -13,6 +13,6 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "5.1.2",
-    "debug": "4.4.0"
+    "debug": "4.3.4"
   }
 }
