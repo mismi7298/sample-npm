@@ -1,4 +1,4 @@
 # Runtime / application dependencies only (no dev, test, or docs tooling)
-urllib3==2.5.0
-requests==2.32.3
+urllib3==2.6.2
+certifi==2024.12.14
 wasmtime==39.0.0

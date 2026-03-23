@@ -1,6 +1,6 @@
 # sample-python
 
-Small Python sample that uses **[urllib3](https://pypi.org/project/urllib3/) 2.5.0**, **[requests](https://pypi.org/project/requests/)**, and **[wasmtime](https://pypi.org/project/wasmtime/)** 39.0.0. `requirements.txt` lists **runtime dependencies only** (no dev, test, or documentation packages).
+Small Python sample that uses **[urllib3](https://pypi.org/project/urllib3/) 2.6.2**, **[certifi](https://pypi.org/project/certifi/)** for HTTPS trust roots, and **[wasmtime](https://pypi.org/project/wasmtime/)** 39.0.0. There is **no `requests`** dependency. `requirements.txt` lists **runtime dependencies only** (no dev, test, or documentation packages).
 
 ## Setup
 
@@ -28,4 +28,4 @@ See `.env.example` for a template you can export manually (no extra packages req
 
 ## Dependencies
 
-Pinned in `requirements.txt`: `urllib3==2.5.0`, `requests==2.32.3`, `wasmtime==39.0.0`. Transitive libraries (e.g. `certifi`, `charset-normalizer`, `idna`) are installed automatically by `pip` as needed by `requests`.
+Pinned in `requirements.txt`: `urllib3==2.6.2`, `certifi==2024.12.14`, `wasmtime==39.0.0`.
