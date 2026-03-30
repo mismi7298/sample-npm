@@ -1,30 +1,20 @@
 {
-  "name": "sample-node-cli",
+  "name": "sample-large-deps",
   "version": "1.0.0",
-  "description": "Sample Node.js 24.x CLI with ~10 total dependencies",
-  "type": "module",
-  "main": "index.js",
-  "bin": {
-    "task-cli": "index.js"
-  },
-  "engines": {
-    "node": ">=24.0.0"
-  },
-  "scripts": {
-    "start": "node index.js",
-    "dev": "node --watch index.js"
-  },
-  "keywords": ["sample", "node24", "cli"],
-  "author": "",
+  "private": true,
+  "description": "Sample npm project with heavy GitHub-oriented dependencies, intended for fast scan testing of sparse-checkout flows.",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^5.4.1",
-    "commander": "^13.1.0",
-    "dayjs": "^1.11.13",
-    "debug": "^4.4.1",
-    "dotenv": "^16.4.7",
-    "lodash-es": "^4.17.21",
-    "nanoid": "^5.1.5",
-    "zod": "^3.24.2"
+    "@babylonjs/core": "^9.0.0",
+    "@elastic/eui": "^114.0.0",
+    "eslint": "^9.23.0",
+    "next": "^16.2.1",
+    "plotly.js": "^3.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.174.0",
+    "typescript": "^5.8.2",
+    "vue": "^3.5.13",
+    "webpack": "^5.98.0"
   }
 }
