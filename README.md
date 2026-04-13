@@ -1,6 +1,6 @@
 # sample-yarn
 
-Minimal Node.js layout that uses **[Yarn](https://yarnpkg.com/)** with **`yarn.lock`** (no `package-lock.json`).
+Minimal Node.js layout that uses **[Yarn](https://yarnpkg.com/)** with **`yarn.lock`** (no `package-lock.json`). Runtime deps: **chalk** 5.2.0, **debug** 4.3.0. **`chalk@5.2.2` is not on the npm registry**; 5.2.0 is the latest 5.2.x release.
 
 ## Prerequisites
 
@@ -14,4 +14,10 @@ yarn install
 yarn start
 ```
 
-`yarn.lock` records the resolved dependency tree. Add packages with `yarn add <pkg>` when you need them.
+Debug logging:
+
+```bash
+yarn debug
+```
+
+`yarn.lock` records the resolved dependency tree.
