@@ -1,20 +1,19 @@
 # sample-debug-chalk
 
-Sample npm project using [debug](https://www.npmjs.com/package/debug) 4.4.3 and [chalk](https://www.npmjs.com/package/chalk) 5.6.2.
+Sample Node.js project using **npm** with **`package-lock.json`**. Runtime deps: **chalk** 5.2.0, **debug** 4.3.0. **`chalk@5.2.2` is not on the npm registry**; 5.2.0 is the latest 5.2.x release.
 
-## Setup
+## Prerequisites
+
+- Node.js 18+ recommended
+
+## Commands
 
 ```bash
 npm install
-```
-
-## Run
-
-```bash
 npm start
 ```
 
-To see debug output:
+Debug logging:
 
 ```bash
 npm run debug
@@ -25,3 +24,5 @@ Or with a specific namespace:
 ```bash
 DEBUG=app:* node index.js
 ```
+
+`package-lock.json` records the resolved dependency tree.

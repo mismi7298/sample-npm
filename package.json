@@ -8,11 +8,9 @@
     "start": "node index.js",
     "debug": "DEBUG=* node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "chalk": "5.1.1",
-    "debug": "4.4.1"
-  }
+    "chalk": "5.2.0",
+    "debug": "4.3.0"
+  },
+  "license": "ISC"
 }
