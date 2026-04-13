@@ -1,18 +1,12 @@
 {
-  "name": "sample-debug-chalk",
+  "name": "sample-yarn",
+  "packageManager": "yarn@3.2.1",
   "version": "1.0.0",
-  "description": "Sample project using debug and chalk",
+  "description": "Minimal sample that uses Yarn (yarn.lock)",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "debug": "DEBUG=* node index.js"
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "chalk": "5.1.2",
-    "debug": "4.4.0"
-  }
+  "license": "ISC"
 }

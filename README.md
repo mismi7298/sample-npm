@@ -1,27 +1,17 @@
-# sample-debug-chalk
+# sample-yarn
 
-Sample npm project using [debug](https://www.npmjs.com/package/debug) 4.4.3 and [chalk](https://www.npmjs.com/package/chalk) 5.6.2.
+Minimal Node.js layout that uses **[Yarn](https://yarnpkg.com/)** with **`yarn.lock`** (no `package-lock.json`).
 
-## Setup
+## Prerequisites
 
-```bash
-npm install
-```
+- Node.js 18+ recommended
+- Yarn via [Corepack](https://nodejs.org/api/corepack.html): `corepack enable`
 
-## Run
-
-```bash
-npm start
-```
-
-To see debug output:
+## Commands
 
 ```bash
-npm run debug
+yarn install
+yarn start
 ```
 
-Or with a specific namespace:
-
-```bash
-DEBUG=app:* node index.js
-```
+`yarn.lock` records the resolved dependency tree. Add packages with `yarn add <pkg>` when you need them.
