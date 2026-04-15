@@ -1,11 +1,13 @@
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-release.properties
-dependency-reduced-pom.xml
-.idea/
+.gradle/
+build/
+out/
+
 *.iml
+.idea/
 .classpath
 .project
 .settings/
+
+# Maven (if switching branches)
+target/
+pom.xml.tag

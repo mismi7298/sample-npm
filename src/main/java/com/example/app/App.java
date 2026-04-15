@@ -13,7 +13,7 @@ public final class App {
     private static final Logger log = LoggerFactory.getLogger(App.class);
 
     public static void main(String[] args) throws Exception {
-        String camel = CaseUtils.toCamelCase("sample maven app", false, ' ');
+        String camel = CaseUtils.toCamelCase("sample gradle app", false, ' ');
         log.info("commons-text: {}", camel);
 
         var mapper = new ObjectMapper();
