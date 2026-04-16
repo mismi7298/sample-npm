@@ -1,1 +1,1 @@
-"""Sample package for the uv-managed project."""
+"""Sample package for the Poetry-managed project."""

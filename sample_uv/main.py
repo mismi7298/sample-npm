@@ -20,7 +20,7 @@ def main() -> None:
     raw: JsonDict = yaml.safe_load(
         io.StringIO(
             """
-title: Sample UV
+title: Sample Poetry
 base_url: https://httpbin.org
 """
         )

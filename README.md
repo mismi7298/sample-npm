@@ -1,35 +1,31 @@
-# sample-uv
+# sample-poetry
 
-Python sample on the **`uv-lock`** branch, managed with **[uv](https://docs.astral.sh/uv/)**. **Five direct** dependencies in `pyproject.toml`; the lockfile resolves **five transitive** packages (`urllib3`, `charset-normalizer`, `idna`, `certifi`, `text-unidecode`), i.e. in the **4–5** range.
+Python sample on the **`poetry-lock`** branch, managed with **[Poetry](https://python-poetry.org/)**. **Five direct** dependencies in `pyproject.toml`; the lockfile pins the same resolution shape as the uv sample (**five transitive** packages: `urllib3`, `charset-normalizer`, `idna`, `certifi` under `requests`, and `text-unidecode` under `python-slugify`).
 
 ## Prerequisites
 
-- Python 3.11+
-- [uv](https://docs.astral.sh/uv/getting-started/installation/) on your `PATH`
+- Python 3.11–3.13
+- [Poetry](https://python-poetry.org/docs/#installation) 2.x
 
-## Sync & run
-
-```bash
-uv sync
-uv run sample-uv
-```
-
-Or:
+## Install & run
 
 ```bash
-uv run python -m sample_uv.main
+poetry install
+poetry run sample-poetry
 ```
 
 ## Lockfile
 
+Regenerate after dependency edits:
+
 ```bash
-uv lock
+poetry lock
 ```
 
-Commit **`uv.lock`** with `pyproject.toml` so installs are reproducible.
+Commit **`poetry.lock`** with **`pyproject.toml`** for reproducible installs.
 
 ## Dependency tree
 
 ```bash
-uv tree
+poetry show --tree
 ```

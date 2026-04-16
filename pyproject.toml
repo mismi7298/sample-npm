@@ -1,20 +1,22 @@
-[build-system]
-requires = ["hatchling>=1.18.0"]
-build-backend = "hatchling.build"
-
-[project]
-name = "sample-uv"
+[tool.poetry]
+name = "sample-poetry"
 version = "0.1.0"
-description = "Sample Python project with uv lockfile"
+description = "Sample Python project with Poetry lockfile"
+authors = ["Sample <sample@example.com>"]
 readme = "README.md"
-requires-python = ">=3.11"
-dependencies = [
-    "requests==2.32.3",
-    "pyyaml==6.0.2",
-    "python-slugify==8.0.4",
-    "packaging==24.2",
-    "typing-extensions==4.12.2",
-]
+packages = [{ include = "sample_uv" }]
 
-[project.scripts]
-sample-uv = "sample_uv.main:main"
+[tool.poetry.dependencies]
+python = ">=3.11,<3.14"
+requests = "2.32.3"
+pyyaml = "6.0.2"
+python-slugify = "8.0.4"
+packaging = "24.2"
+typing-extensions = "4.12.2"
+
+[tool.poetry.scripts]
+sample-poetry = "sample_uv.main:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
