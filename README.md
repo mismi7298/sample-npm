@@ -1,24 +1,35 @@
-# sample-gradle
+# sample-uv
 
-Minimal **Gradle** project on the `gradle` branch (classic **Groovy** `build.gradle` + `settings.gradle`). **Five direct** `implementation` dependencies; the resolved compile classpath includes **four transitive** libraries (`commons-lang3`, `jackson-core`, `jackson-annotations`, `logback-core`), matching the **3–5 transitive** range. Gson is pinned to **2.8.9** so it does not add extra compile dependencies.
+Python sample on the **`uv-lock`** branch, managed with **[uv](https://docs.astral.sh/uv/)**. **Five direct** dependencies in `pyproject.toml`; the lockfile resolves **five transitive** packages (`urllib3`, `charset-normalizer`, `idna`, `certifi`, `text-unidecode`), i.e. in the **4–5** range.
 
 ## Prerequisites
 
-- JDK 17+
+- Python 3.11+
+- [uv](https://docs.astral.sh/uv/getting-started/installation/) on your `PATH`
 
-## Build & run
-
-Uses the included **Gradle wrapper** (`./gradlew`).
-
-```bash
-./gradlew -q build
-./gradlew -q run
-```
-
-## Inspect the dependency tree
+## Sync & run
 
 ```bash
-./gradlew -q dependencies --configuration runtimeClasspath
+uv sync
+uv run sample-uv
 ```
 
-Direct dependencies are declared in **`build.gradle`** under `dependencies { ... }`.
+Or:
+
+```bash
+uv run python -m sample_uv.main
+```
+
+## Lockfile
+
+```bash
+uv lock
+```
+
+Commit **`uv.lock`** with `pyproject.toml` so installs are reproducible.
+
+## Dependency tree
+
+```bash
+uv tree
+```

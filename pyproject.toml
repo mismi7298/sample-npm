@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling>=1.18.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sample-uv"
+version = "0.1.0"
+description = "Sample Python project with uv lockfile"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests==2.32.3",
+    "pyyaml==6.0.2",
+    "python-slugify==8.0.4",
+    "packaging==24.2",
+    "typing-extensions==4.12.2",
+]
+
+[project.scripts]
+sample-uv = "sample_uv.main:main"

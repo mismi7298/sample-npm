@@ -1,13 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.python-version
+
+# Gradle / Java (other branches)
 .gradle/
 build/
 out/
-
+target/
 *.iml
 .idea/
-.classpath
-.project
-.settings/
-
-# Maven (if switching branches)
-target/
-pom.xml.tag
