@@ -1,31 +1,35 @@
-# sample-poetry
+# sample-go
 
-Python sample on the **`poetry-lock`** branch, managed with **[Poetry](https://python-poetry.org/)**. **Five direct** dependencies in `pyproject.toml`; the lockfile pins the same resolution shape as the uv sample (**five transitive** packages: `urllib3`, `charset-normalizer`, `idna`, `certifi` under `requests`, and `text-unidecode` under `python-slugify`).
+Minimal **Go** module on the **`golang`** branch. **Five direct** dependencies in `go.mod`; **`go.sum`** records checksums for the full graph. After `go mod tidy`, the **`// indirect`** block lists **five** modules (`mousetrap`, `pflag` from Cobra; `go-colorable`, `go-isatty`, `golang.org/x/sys` from color + logrus paths), i.e. in the **4–5 transitive** range.
 
 ## Prerequisites
 
-- Python 3.11–3.13
-- [Poetry](https://python-poetry.org/docs/#installation) 2.x
+- [Go](https://go.dev/dl/) 1.22+
 
-## Install & run
+## Build & run
 
 ```bash
-poetry install
-poetry run sample-poetry
+go mod download
+go run .
+```
+
+Or build a binary:
+
+```bash
+go build -o sample-go .
+./sample-go
 ```
 
 ## Lockfile
 
-Regenerate after dependency edits:
+Go uses **`go.sum`** together with **`go.mod`**. Refresh after edits:
 
 ```bash
-poetry lock
+go mod tidy
 ```
 
-Commit **`poetry.lock`** with **`pyproject.toml`** for reproducible installs.
-
-## Dependency tree
+Inspect the module graph:
 
 ```bash
-poetry show --tree
+go mod graph | head -50
 ```

@@ -1,17 +1,20 @@
-.venv/
+# Go
+sample-go
+*.exe
+*.test
+*.out
+vendor/
 
+# Python / Poetry (other branches)
+.venv/
 __pycache__/
 *.py[cod]
-*$py.class
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.python-version
+.poetry/
 
-# Gradle / Java (other branches)
+# Java / Gradle / Maven
 .gradle/
 build/
-out/
 target/
-*.iml
+out/
 .idea/
+*.iml
