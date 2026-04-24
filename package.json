@@ -1,16 +1,20 @@
 {
-  "name": "sample-debug-chalk",
+  "name": "bajaj-24th",
   "version": "1.0.0",
-  "description": "Sample project using debug and chalk",
-  "type": "module",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "debug": "DEBUG=* node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
   "dependencies": {
-    "chalk": "5.2.0",
-    "debug": "4.3.0"
-  },
-  "license": "ISC"
+    "@angular/cdk": "^16.2.14",
+    "@angular/common": "^16.2.12",
+    "@angular/compiler": "^16.2.12",
+    "@angular/core": "^16.2.12",
+    "zone.js": "^0.14.5" # try with AND without this dep
+  }
 }
