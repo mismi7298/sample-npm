@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sample-python"
+version = "1.0.0"
+description = "Sample Python project demonstrating urllib3, requests, and wasmtime."
+authors = [{ name = "Naresh Kumar", email = "Naresh_Kumar@lineaje.com" }]
+requires-python = ">=3.9"
+dependencies = [
+    "urllib3==2.5.0",
+    "requests==2.32.3",
+    "wasmtime==39.0.0",
+]
+
+[project.scripts]
+sample = "main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
