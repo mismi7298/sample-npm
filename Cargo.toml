@@ -1,0 +1,13 @@
+[package]
+name = "sample-rust"
+version = "1.0.0"
+edition = "2021"
+description = "Sample Rust project demonstrating reqwest HTTP and serde JSON."
+authors = ["Naresh Kumar <Naresh_Kumar@lineaje.com>"]
+
+[dependencies]
+reqwest = { version = "0.12", features = ["blocking", "json"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rustc-version-runtime = "0.3"
