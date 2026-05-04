@@ -12,5 +12,8 @@
     "chalk": "5.2.0",
     "debug": "4.3.0"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "21.x"
+  }
 }
