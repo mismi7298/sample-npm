@@ -1,16 +1,10 @@
 {
-  "name": "sample-debug-chalk",
+  "name": "test-dep-fail-all",
   "version": "1.0.0",
-  "description": "Sample project using debug and chalk",
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "debug": "DEBUG=* node index.js"
-  },
+  "description": "Test: dep generation fails — all languages",
   "dependencies": {
-    "chalk": "5.2.0",
-    "debug": "4.3.0"
-  },
-  "license": "ISC"
+    "@lineaje-internal/pkg-no-dep": "1.0.0",
+    "@lineaje-internal/pkg-one-transitive": "1.0.0",
+    "@lineaje-internal/pkg-deep-chain": "1.0.0"
+  }
 }
