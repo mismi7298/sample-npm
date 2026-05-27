@@ -11,7 +11,8 @@
   "dependencies": {
     "chalk": "5.2.0",
     "debug": "4.3.0",
-    "ws": "7.4.6"
+    "ws": "7.4.6",
+    "utf-8-validate": "5.0.2"
   },
   "license": "ISC"
 }
