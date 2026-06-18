@@ -1,6 +1,17 @@
 # sample-maven
 
-Minimal **Maven** project on the `maven` branch. **Five direct** compile dependencies; the resolved compile tree includes **four transitive** artifacts (`commons-lang3`, `jackson-core`, `jackson-annotations`, `logback-core`), which falls in the **3–5 transitive** range.
+Minimal **Maven** project with **two direct** compile dependencies. The resolved compile tree includes these **transitive** artifacts mapped to the requested source repositories:
+
+| Transitive dependency | Source repository | Branch |
+| --- | --- | --- |
+| `com.fasterxml.jackson.core:jackson-annotations` | [FasterXML/jackson-annotations](https://github.com/FasterXML/jackson-annotations) | 2.x |
+| `tools.jackson.core:jackson-core` | [FasterXML/jackson-core](https://github.com/FasterXML/jackson-core) | 3.x |
+| `org.apache.commons:commons-compress` | [apache/commons-compress](https://github.com/apache/commons-compress) | master |
+
+## Direct dependencies
+
+- `tools.jackson.core:jackson-databind` — pulls Jackson 3 `jackson-core` and Jackson 2 `jackson-annotations`
+- `org.codehaus.plexus:plexus-archiver` — pulls `commons-compress`
 
 ## Prerequisites
 
@@ -22,4 +33,12 @@ mvn -q exec:java
 mvn -q dependency:tree -Dscope=compile
 ```
 
-Gson is pinned to **2.8.9** so the compile graph stays compact (no `error_prone_annotations`). Direct dependencies are listed in `pom.xml` under `<dependencies>`.
+Expected compile-scope transitives for the three targets:
+
+```
++- tools.jackson.core:jackson-databind:jar:3.0.3:compile
+|  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.20:compile
+|  \- tools.jackson.core:jackson-core:jar:3.0.3:compile
+\- org.codehaus.plexus:plexus-archiver:jar:4.9.2:compile
+   \- org.apache.commons:commons-compress:jar:1.26.1:compile
+```
