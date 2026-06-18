@@ -9,27 +9,22 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>sample-maven</name>
-  <description>Maven sample whose compile tree includes jackson-annotations (2.x), jackson-core (3.x), and commons-compress as transitive dependencies</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>17</maven.compiler.release>
-    <jackson-databind.version>3.0.3</jackson-databind.version>
-    <plexus-archiver.version>4.9.2</plexus-archiver.version>
   </properties>
 
   <dependencies>
-    <!-- Transitive: com.fasterxml.jackson.core:jackson-annotations (2.x) + tools.jackson.core:jackson-core (3.x) -->
     <dependency>
       <groupId>tools.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>${jackson-databind.version}</version>
+      <version>3.2.0</version>
     </dependency>
-    <!-- Transitive: org.apache.commons:commons-compress -->
     <dependency>
       <groupId>org.codehaus.plexus</groupId>
       <artifactId>plexus-archiver</artifactId>
-      <version>${plexus-archiver.version}</version>
+      <version>4.10.1</version>
     </dependency>
   </dependencies>
 

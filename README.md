@@ -1,22 +1,27 @@
 # sample-maven
 
-Minimal **Maven** project with **two direct** compile dependencies. The resolved compile tree includes these **transitive** artifacts mapped to the requested source repositories:
+Two direct dependencies; three target libraries arrive transitively:
 
-| Transitive dependency | Source repository | Branch |
+```mermaid
+graph TD
+  databind[jackson-databind 3.2.0]
+  plexus[plexus-archiver 4.10.1]
+  ann[jackson-annotations 2.22]
+  core[jackson-core 3.2.0]
+  compress[commons-compress 1.28.0]
+
+  databind --> ann
+  databind --> core
+  plexus --> compress
+```
+
+| Target (transitive) | Version | Source |
 | --- | --- | --- |
-| `com.fasterxml.jackson.core:jackson-annotations` | [FasterXML/jackson-annotations](https://github.com/FasterXML/jackson-annotations) | 2.x |
-| `tools.jackson.core:jackson-core` | [FasterXML/jackson-core](https://github.com/FasterXML/jackson-core) | 3.x |
-| `org.apache.commons:commons-compress` | [apache/commons-compress](https://github.com/apache/commons-compress) | master |
+| `jackson-annotations` | 2.22 | [FasterXML/jackson-annotations](https://github.com/FasterXML/jackson-annotations) |
+| `jackson-core` | 3.2.0 | [FasterXML/jackson-core](https://github.com/FasterXML/jackson-core) |
+| `commons-compress` | 1.28.0 | [apache/commons-compress](https://github.com/apache/commons-compress) |
 
-## Direct dependencies
-
-- `tools.jackson.core:jackson-databind` — pulls Jackson 3 `jackson-core` and Jackson 2 `jackson-annotations`
-- `org.codehaus.plexus:plexus-archiver` — pulls `commons-compress`
-
-## Prerequisites
-
-- JDK 17+
-- [Apache Maven](https://maven.apache.org/install.html) 3.9+
+Any other transitives from `plexus-archiver` or `commons-compress` are included as Maven resolves them (no exclusions).
 
 ## Build & run
 
@@ -25,20 +30,8 @@ mvn -q -DskipTests package
 mvn -q exec:java
 ```
 
-(Use `exec:java` so the full dependency classpath is applied; the plain JAR does not bundle libraries.)
-
-## Inspect the dependency tree
+## Dependency tree
 
 ```bash
 mvn -q dependency:tree -Dscope=compile
-```
-
-Expected compile-scope transitives for the three targets:
-
-```
-+- tools.jackson.core:jackson-databind:jar:3.0.3:compile
-|  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.20:compile
-|  \- tools.jackson.core:jackson-core:jar:3.0.3:compile
-\- org.codehaus.plexus:plexus-archiver:jar:4.9.2:compile
-   \- org.apache.commons:commons-compress:jar:1.26.1:compile
 ```
