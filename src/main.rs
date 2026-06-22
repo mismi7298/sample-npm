@@ -1,26 +1,42 @@
-use reqwest::blocking::Client;
-use serde_json::Value;
+use postcard_cobs::{decode, encode, max_encoding_length};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let url = std::env::var("SAMPLE_URL")
-        .unwrap_or_else(|_| "https://httpbin.org/get".to_string());
+    let input = b"hello\x00world";
+    let mut encoded = vec![0u8; max_encoding_length(input.len())];
+    let encoded_len = encode(input, &mut encoded);
+    encoded.truncate(encoded_len);
 
-    println!("Rust version: {}", rustc_version_runtime::version());
-    println!("Fetching: {url}");
+    let mut decoded = vec![0u8; input.len()];
+    let decoded_len = decode(&encoded, &mut decoded)?;
 
-    let client = Client::builder().timeout(std::time::Duration::from_secs(10)).build()?;
-    let response = client.get(&url).send()?;
+    println!("postcard-cobs demo");
+    println!("  input   : {:?}", input);
+    println!("  encoded : {:?}", encoded);
+    println!("  decoded : {:?}", &decoded[..decoded_len]);
 
-    let status = response.status();
-    let body = response.text()?;
-    let preview = &body[..body.len().min(200)];
+    #[cfg(all(target_arch = "wasm32", any(target_os = "wasi", target_os = "unknown")))]
+    {
+        use wasi_v0_11 as wasi_latest;
 
-    println!("Status : {status}");
-    println!("Bytes  : {}", body.len());
-    println!("Preview: {preview}");
+        let message = "Hello from wasi 0.11.1\n";
+        let iov = wasi_latest::Ciovec {
+            buf: message.as_ptr(),
+            buf_len: message.len(),
+        };
+        wasi_latest::fd_write(1, &[iov])?;
 
-    let json: Value = serde_json::from_str(&body)?;
-    println!("Origin : {}", json["origin"]);
+        let legacy_iov = wasi::Ciovec {
+            buf: message.as_ptr(),
+            buf_len: message.len(),
+        };
+        wasi::fd_write(1, &[legacy_iov])?;
+    }
+
+    #[cfg(not(all(target_arch = "wasm32", any(target_os = "wasi", target_os = "unknown"))))]
+    {
+        println!("wasi 0.10.2 : linked (use wasm32-wasip1 target for syscalls)");
+        println!("wasi 0.11.1 : linked as wasi-v0_11 (use wasm32-wasip1 target for syscalls)");
+    }
 
     Ok(())
 }

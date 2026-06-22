@@ -2,12 +2,10 @@
 name = "sample-rust"
 version = "1.0.0"
 edition = "2021"
-description = "Sample Rust project demonstrating reqwest HTTP and serde JSON."
+description = "Sample Rust project with postcard-cobs and wasi bindings."
 authors = ["Naresh Kumar <Naresh_Kumar@lineaje.com>"]
 
 [dependencies]
-reqwest = { version = "0.12", features = ["blocking", "json"] }
-tokio = { version = "1", features = ["full"] }
-serde = { version = "1", features = ["derive"] }
-serde_json = "1"
-rustc-version-runtime = "0.3"
+postcard-cobs = "0.1.5-pre"
+wasi = "0.10.2+wasi-snapshot-preview1"
+wasi-v0_11 = { package = "wasi", version = "0.11.1+wasi-snapshot-preview1" }

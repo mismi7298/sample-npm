@@ -11,3 +11,6 @@ venv/
 
 # Legacy (previous Node sample)
 node_modules/
+
+# Rust
+/target/
