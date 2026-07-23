@@ -2,13 +2,13 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 6
-  cacheKey: 8
+  version: 10
+  cacheKey: 10
 
 "chalk@npm:5.2.0":
   version: 5.2.0
   resolution: "chalk@npm:5.2.0"
-  checksum: 03d8060277de6cf2fd567dc25fcf770593eb5bb85f460ce443e49255a30ff1242edd0c90a06a03803b0466ff0687a939b41db1757bec987113e83de89a003caa
+  checksum: 10/daadc187314c851cd94f1058dd870a2dd351dfaef8cf69048977fc56bce120f02f7aca77eb7ca88bf7a37ab6c15922e12b43f4ffa885f4fd2d9e15dd14c61a1b
   languageName: node
   linkType: hard
 
@@ -16,18 +16,18 @@ __metadata:
   version: 4.3.0
   resolution: "debug@npm:4.3.0"
   dependencies:
-    ms: 2.1.2
+    ms: "npm:2.1.2"
   peerDependenciesMeta:
     supports-color:
       optional: true
-  checksum: f8a74c24d97295bcc21779abc72604d5eac5acfb8107d86eb3ce770cd7638d81d3b76a3e4548cbd7be6d9feae1ba84563a2339099511a9f1c124a309137f487a
+  checksum: 10/56aa642bcc0faf4a41ed6a51cba82e253aea44d22078959b374a950f0b7dbc6a33567fc9c8ed4bcb4ffeb2c3a233501487d1a4d1d896a1ef4312194a25c7c163
   languageName: node
   linkType: hard
 
 "ms@npm:2.1.2":
   version: 2.1.2
   resolution: "ms@npm:2.1.2"
-  checksum: 673cdb2c3133eb050c745908d8ce632ed2c02d85640e2edb3ace856a2266a813b30c613569bf3354fdf4ea7d1a1494add3bfa95e2713baa27d0c2c71fc44f58f
+  checksum: 10/673cdb2c3133eb050c745908d8ce632ed2c02d85640e2edb3ace856a2266a813b30c613569bf3354fdf4ea7d1a1494add3bfa95e2713baa27d0c2c71fc44f58f
   languageName: node
   linkType: hard
 
@@ -35,7 +35,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sample-yarn@workspace:."
   dependencies:
-    chalk: 5.2.0
-    debug: 4.3.0
+    chalk: "catalog:"
+    debug: "catalog:"
   languageName: unknown
   linkType: soft

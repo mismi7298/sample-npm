@@ -1,6 +1,6 @@
 {
   "name": "sample-yarn",
-  "packageManager": "yarn@3.2.1",
+  "packageManager": "yarn@4.17.1",
   "version": "1.0.0",
   "description": "Minimal sample that uses Yarn (yarn.lock)",
   "type": "module",
@@ -10,8 +10,8 @@
     "debug": "DEBUG=* node index.js"
   },
   "dependencies": {
-    "chalk": "5.2.0",
-    "debug": "4.3.0"
+    "chalk": "catalog:",
+    "debug": "catalog:"
   },
   "license": "ISC"
 }
